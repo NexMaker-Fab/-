@@ -183,112 +183,112 @@
 <img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picture401.jpg"/>
 <p align="left"> 1. Install the p5.js language in Processing. </p>
 <p align="left"> 2. Write programs using the p5.js language. In the writing process, first define the upper limit of the number of balls in the game, then define the kinematic and mechanical environment of the game (including the properties of gravity, friction, etc.), and finally write the rules of the game. </p>
-<p align="left">
 <img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picture403.gif"/>
+<p align="left">
 
-<pre class="line-numbers language-javaScript" data-language="javaScript"><code class="language-javaScript">let balls &#x3D; [];
-let ballsMax &#x3D; 300;
-let grav &#x3D; 0.5,
-    fric &#x3D; 0.999,
-    rebn &#x3D; 0.05;
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> balls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ballsMax <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> grav <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+    fric <span class="token operator">=</span> <span class="token number">0.999</span><span class="token punctuation">,</span>
+    rebn <span class="token operator">=</span> <span class="token number">0.05</span><span class="token punctuation">;</span>
 
-function setup() &#123;
-  createCanvas(windowWidth, windowHeight);
+<span class="token keyword">function</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">createCanvas</span><span class="token punctuation">(</span>windowWidth<span class="token punctuation">,</span> windowHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  &#x2F;&#x2F; spawns 30 balls of random size and vectors
-  for (let i &#x3D; 0; i &lt; 30; i++) &#123;
-    let x &#x3D; random(0, width),
-        y &#x3D; random(0, height);
+  <span class="token comment">// spawns 30 balls of random size and vectors</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">30</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> width<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        y <span class="token operator">=</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    balls.push(&#123;
-      x: x,
-      y: y,
-      px: x - random(-10, 10),
-      py: y - random(-10, 10),
-      s: random(65, 260),
-    &#125;);
-  &#125;
-&#125;
+    balls<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">x</span><span class="token operator">:</span> x<span class="token punctuation">,</span>
+      <span class="token literal-property property">y</span><span class="token operator">:</span> y<span class="token punctuation">,</span>
+      <span class="token literal-property property">px</span><span class="token operator">:</span> x <span class="token operator">-</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">py</span><span class="token operator">:</span> y <span class="token operator">-</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">s</span><span class="token operator">:</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">260</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
 
-&#x2F;&#x2F; main function for updating and displaying the balls
-function updateBall() &#123;
-  for (let i &#x3D; 0; i &lt; balls.length; i++) &#123;
+<span class="token comment">// main function for updating and displaying the balls</span>
+<span class="token keyword">function</span> <span class="token function">updateBall</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> balls<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     
-    &#x2F;&#x2F;find velocity and apply air friction 
-    let b &#x3D; balls[i],
-        vx &#x3D; (b.x - b.px) * fric,
-        vy &#x3D; (b.y - b.py) * fric;
+    <span class="token comment">//find velocity and apply air friction </span>
+    <span class="token keyword">let</span> b <span class="token operator">=</span> balls<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>
+        vx <span class="token operator">=</span> <span class="token punctuation">(</span>b<span class="token punctuation">.</span>x <span class="token operator">-</span> b<span class="token punctuation">.</span>px<span class="token punctuation">)</span> <span class="token operator">*</span> fric<span class="token punctuation">,</span>
+        vy <span class="token operator">=</span> <span class="token punctuation">(</span>b<span class="token punctuation">.</span>y <span class="token operator">-</span> b<span class="token punctuation">.</span>py<span class="token punctuation">)</span> <span class="token operator">*</span> fric<span class="token punctuation">;</span>
 
-    b.px &#x3D; b.x;
-    b.py &#x3D; b.y;
+    b<span class="token punctuation">.</span>px <span class="token operator">=</span> b<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    b<span class="token punctuation">.</span>py <span class="token operator">=</span> b<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
 
-    vy +&#x3D; grav;&#x2F;&#x2F;apply gravity 
+    vy <span class="token operator">+=</span> grav<span class="token punctuation">;</span><span class="token comment">//apply gravity </span>
 
-    b.x +&#x3D; vx;
-    b.y +&#x3D; vy;
-
-
-    &#x2F;&#x2F; if ball is outside the x-bounds
-    if (b.x &lt; 0 || b.x &gt; width) &#123;
-      b.x &#x3D; b.x &gt; width ? width : b.x &lt; 0 ? 0 : b.x;
-      b.px &#x3D; b.x + vx * rebn;
-    &#125;
-    &#x2F;&#x2F; if ball is outside the y-bounds
-    if (b.y &lt; 0 || b.y &gt; height) &#123;
-      b.y &#x3D; b.y &gt; height ? height : b.y &lt; 0 ? 0 : b.y;
-      b.py &#x3D; b.y + vy * rebn;
-    &#125;
+    b<span class="token punctuation">.</span>x <span class="token operator">+=</span> vx<span class="token punctuation">;</span>
+    b<span class="token punctuation">.</span>y <span class="token operator">+=</span> vy<span class="token punctuation">;</span>
 
 
-    for (let j &#x3D; 0; j &lt; balls.length; j++) &#123;
+    <span class="token comment">// if ball is outside the x-bounds</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token punctuation">.</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> b<span class="token punctuation">.</span>x <span class="token operator">></span> width<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      b<span class="token punctuation">.</span>x <span class="token operator">=</span> b<span class="token punctuation">.</span>x <span class="token operator">></span> width <span class="token operator">?</span> width <span class="token operator">:</span> b<span class="token punctuation">.</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> b<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+      b<span class="token punctuation">.</span>px <span class="token operator">=</span> b<span class="token punctuation">.</span>x <span class="token operator">+</span> vx <span class="token operator">*</span> rebn<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// if ball is outside the y-bounds</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token punctuation">.</span>y <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> b<span class="token punctuation">.</span>y <span class="token operator">></span> height<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      b<span class="token punctuation">.</span>y <span class="token operator">=</span> b<span class="token punctuation">.</span>y <span class="token operator">></span> height <span class="token operator">?</span> height <span class="token operator">:</span> b<span class="token punctuation">.</span>y <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> b<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+      b<span class="token punctuation">.</span>py <span class="token operator">=</span> b<span class="token punctuation">.</span>y <span class="token operator">+</span> vy <span class="token operator">*</span> rebn<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-      let b2 &#x3D; balls[j],
-          d &#x3D; dist(b.x, b.y, b2.x, b2.y), &#x2F;&#x2F; distance between the 2 balls
-          bc &#x3D; (b.s + b2.s) &#x2F; 2; &#x2F;&#x2F; normal of the 2 balls size
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> balls<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+      <span class="token keyword">let</span> b2 <span class="token operator">=</span> balls<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>
+          d <span class="token operator">=</span> <span class="token function">dist</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>x<span class="token punctuation">,</span> b<span class="token punctuation">.</span>y<span class="token punctuation">,</span> b2<span class="token punctuation">.</span>x<span class="token punctuation">,</span> b2<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// distance between the 2 balls</span>
+          bc <span class="token operator">=</span> <span class="token punctuation">(</span>b<span class="token punctuation">.</span>s <span class="token operator">+</span> b2<span class="token punctuation">.</span>s<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// normal of the 2 balls size</span>
       
-      &#x2F;&#x2F;if the distance is less then the normal, and ball is not itself
-      if (d &lt;&#x3D; bc &amp;&amp; i !&#x3D; j) &#123;
+      <span class="token comment">//if the distance is less then the normal, and ball is not itself</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>d <span class="token operator">&lt;=</span> bc <span class="token operator">&amp;&amp;</span> i <span class="token operator">!=</span> j<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-        let rebnp &#x3D; (bc - d) &#x2F; d &#x2F; 2,
-            ofx &#x3D; (b2.x - b.x) * rebnp,
-            ofy &#x3D; (b2.y - b.y) * rebnp;
+        <span class="token keyword">let</span> rebnp <span class="token operator">=</span> <span class="token punctuation">(</span>bc <span class="token operator">-</span> d<span class="token punctuation">)</span> <span class="token operator">/</span> d <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            ofx <span class="token operator">=</span> <span class="token punctuation">(</span>b2<span class="token punctuation">.</span>x <span class="token operator">-</span> b<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> rebnp<span class="token punctuation">,</span>
+            ofy <span class="token operator">=</span> <span class="token punctuation">(</span>b2<span class="token punctuation">.</span>y <span class="token operator">-</span> b<span class="token punctuation">.</span>y<span class="token punctuation">)</span> <span class="token operator">*</span> rebnp<span class="token punctuation">;</span>
 
-        b.x -&#x3D; ofx;
-        b.y -&#x3D; ofy;
+        b<span class="token punctuation">.</span>x <span class="token operator">-=</span> ofx<span class="token punctuation">;</span>
+        b<span class="token punctuation">.</span>y <span class="token operator">-=</span> ofy<span class="token punctuation">;</span>
 
-        b2.x +&#x3D; ofx;
-        b2.y +&#x3D; ofy;
+        b2<span class="token punctuation">.</span>x <span class="token operator">+=</span> ofx<span class="token punctuation">;</span>
+        b2<span class="token punctuation">.</span>y <span class="token operator">+=</span> ofy<span class="token punctuation">;</span>
 
-      &#125;
-    &#125;
-    ellipse(b.x, b.y, b.s, b.s);
-  &#125;
-&#125;
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">ellipse</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>x<span class="token punctuation">,</span> b<span class="token punctuation">.</span>y<span class="token punctuation">,</span> b<span class="token punctuation">.</span>s<span class="token punctuation">,</span> b<span class="token punctuation">.</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-function draw() &#123;
+<span class="token keyword">function</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-  background(255);
-  fill(0);
+  <span class="token function">background</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   
-  updateBall();
+  <span class="token function">updateBall</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-&#125;
+<span class="token punctuation">&#125;</span>
 
 
-&#x2F;&#x2F; push a new ball when mouse is clicked
-function mouseReleased() &#123;
-  if (balls.length &gt;&#x3D; ballsMax) &#123;
-    return;
-  &#125;
-  balls.push(&#123;
-    x: mouseX,
-    y: mouseY,
-    px: mouseX + random(-10, 10),
-    py: mouseY + random(-10, 10),
-    s: random(65, 160)
-  &#125;);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// push a new ball when mouse is clicked</span>
+<span class="token keyword">function</span> <span class="token function">mouseReleased</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>balls<span class="token punctuation">.</span>length <span class="token operator">>=</span> ballsMax<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  balls<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">x</span><span class="token operator">:</span> mouseX<span class="token punctuation">,</span>
+    <span class="token literal-property property">y</span><span class="token operator">:</span> mouseY<span class="token punctuation">,</span>
+    <span class="token literal-property property">px</span><span class="token operator">:</span> mouseX <span class="token operator">+</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">py</span><span class="token operator">:</span> mouseY <span class="token operator">+</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">s</span><span class="token operator">:</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">160</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </p>
 
 
