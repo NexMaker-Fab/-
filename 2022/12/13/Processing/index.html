@@ -183,8 +183,115 @@
 <img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picture401.jpg"/>
 <p align="left"> 1. Install the p5.js language in Processing. </p>
 <p align="left"> 2. Write programs using the p5.js language. In the writing process, first define the upper limit of the number of balls in the game, then define the kinematic and mechanical environment of the game (including the properties of gravity, friction, etc.), and finally write the rules of the game. </p>
-<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picture402.jpg"/>
+<p align="left">
 <img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picture403.gif"/>
+
+<pre class="line-numbers language-javaScript" data-language="javaScript"><code class="language-javaScript">let balls &#x3D; [];
+let ballsMax &#x3D; 300;
+let grav &#x3D; 0.5,
+    fric &#x3D; 0.999,
+    rebn &#x3D; 0.05;
+
+function setup() &#123;
+  createCanvas(windowWidth, windowHeight);
+
+  &#x2F;&#x2F; spawns 30 balls of random size and vectors
+  for (let i &#x3D; 0; i &lt; 30; i++) &#123;
+    let x &#x3D; random(0, width),
+        y &#x3D; random(0, height);
+
+    balls.push(&#123;
+      x: x,
+      y: y,
+      px: x - random(-10, 10),
+      py: y - random(-10, 10),
+      s: random(65, 260),
+    &#125;);
+  &#125;
+&#125;
+
+
+&#x2F;&#x2F; main function for updating and displaying the balls
+function updateBall() &#123;
+  for (let i &#x3D; 0; i &lt; balls.length; i++) &#123;
+    
+    &#x2F;&#x2F;find velocity and apply air friction 
+    let b &#x3D; balls[i],
+        vx &#x3D; (b.x - b.px) * fric,
+        vy &#x3D; (b.y - b.py) * fric;
+
+    b.px &#x3D; b.x;
+    b.py &#x3D; b.y;
+
+    vy +&#x3D; grav;&#x2F;&#x2F;apply gravity 
+
+    b.x +&#x3D; vx;
+    b.y +&#x3D; vy;
+
+
+    &#x2F;&#x2F; if ball is outside the x-bounds
+    if (b.x &lt; 0 || b.x &gt; width) &#123;
+      b.x &#x3D; b.x &gt; width ? width : b.x &lt; 0 ? 0 : b.x;
+      b.px &#x3D; b.x + vx * rebn;
+    &#125;
+    &#x2F;&#x2F; if ball is outside the y-bounds
+    if (b.y &lt; 0 || b.y &gt; height) &#123;
+      b.y &#x3D; b.y &gt; height ? height : b.y &lt; 0 ? 0 : b.y;
+      b.py &#x3D; b.y + vy * rebn;
+    &#125;
+
+
+    for (let j &#x3D; 0; j &lt; balls.length; j++) &#123;
+
+      let b2 &#x3D; balls[j],
+          d &#x3D; dist(b.x, b.y, b2.x, b2.y), &#x2F;&#x2F; distance between the 2 balls
+          bc &#x3D; (b.s + b2.s) &#x2F; 2; &#x2F;&#x2F; normal of the 2 balls size
+      
+      &#x2F;&#x2F;if the distance is less then the normal, and ball is not itself
+      if (d &lt;&#x3D; bc &amp;&amp; i !&#x3D; j) &#123;
+
+        let rebnp &#x3D; (bc - d) &#x2F; d &#x2F; 2,
+            ofx &#x3D; (b2.x - b.x) * rebnp,
+            ofy &#x3D; (b2.y - b.y) * rebnp;
+
+        b.x -&#x3D; ofx;
+        b.y -&#x3D; ofy;
+
+        b2.x +&#x3D; ofx;
+        b2.y +&#x3D; ofy;
+
+      &#125;
+    &#125;
+    ellipse(b.x, b.y, b.s, b.s);
+  &#125;
+&#125;
+
+function draw() &#123;
+
+  background(255);
+  fill(0);
+  
+  updateBall();
+
+&#125;
+
+
+&#x2F;&#x2F; push a new ball when mouse is clicked
+function mouseReleased() &#123;
+  if (balls.length &gt;&#x3D; ballsMax) &#123;
+    return;
+  &#125;
+  balls.push(&#123;
+    x: mouseX,
+    y: mouseY,
+    px: mouseX + random(-10, 10),
+    py: mouseY + random(-10, 10),
+    s: random(65, 160)
+  &#125;);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</p>
+
+
     </div>
 
     
@@ -261,7 +368,7 @@
             </div>
             
         </div>
-        <span>&copy; 2022 Guo Herui<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        <span>&copy; 2023 Guo Herui<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
         
         
             <br>
