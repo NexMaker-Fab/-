@@ -1,7 +1,7 @@
 .divider, hr {
     border: none;
     border-top: 1px solid var(--white-1);
-    margin: auto;
+    margin: 32px auto;
 }
 
 .divider {
@@ -31,6 +31,8 @@ pre {
 code {
     font-size: 12px;
     background-color: var(--white-1);
+    position: absolute;
+    left: 0px;
     padding: 2px;
     border-radius: 4px;
 }
