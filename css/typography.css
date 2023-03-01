@@ -32,7 +32,7 @@ code {
     font-size: 12px;
     background-color: var(--white-1);
     position: absolute;
-    left: 0px;
+    left: 0;
     padding: 2px;
     border-radius: 4px;
 }
