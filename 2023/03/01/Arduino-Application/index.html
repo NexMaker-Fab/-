@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Arduino Application - Four Esigners</title>
+  
+    <link rel="shortcut icon" href="../../../../favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:0" content="F" />
+  
+  <meta property="og:1" content="o" />
+  
+  <meta property="og:2" content="u" />
+  
+  <meta property="og:3" content="r" />
+  
+  <meta property="og:4" content=" " />
+  
+  <meta property="og:5" content="E" />
+  
+  <meta property="og:6" content="s" />
+  
+  <meta property="og:7" content="i" />
+  
+  <meta property="og:8" content="g" />
+  
+  <meta property="og:9" content="n" />
+  
+  <meta property="og:10" content="e" />
+  
+  <meta property="og:11" content="r" />
+  
+  <meta property="og:12" content="s" />
+  
+  <meta property="og:title" content="Arduino Application - Four Esigners" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://nexmaker-fab.github.io/2022zjudemini-team1boy/2023/03/01/Arduino-Application/index.html" />
+  
+  <meta property="og:image" content="/favicon.png" />
+  
+  <meta property="og:article:published_time" content="2023-03-01T05:00:38.000Z" />
+  
+  <meta property="og:article:author" content="Guo Herui" />
+  
+  
+
+  
+<link rel="stylesheet" href="../../../../css/var.css">
+
+  
+<link rel="stylesheet" href="../../../../css/main.css">
+
+  
+<link rel="stylesheet" href="../../../../css/typography.css">
+
+  
+<link rel="stylesheet" href="../../../../css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="../../../../css/components.css">
+
+  
+<link rel="stylesheet" href="../../../../css/nav.css">
+
+  
+<link rel="stylesheet" href="../../../../css/paginator.css">
+
+  
+<link rel="stylesheet" href="../../../../css/footer.css">
+
+  
+<link rel="stylesheet" href="../../../../css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="../../../../css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="1"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/2022zjudemini-team1boy/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/2022zjudemini-team1boy/">Four Esigners</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/2022zjudemini-team1boy/">Home</a>
+            
+            
+            <a class="nav-item" href="../../../../2022zjudemini-team1boy/2022/11/16/Hello-my-teammates">Team</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../course">Course</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../about">About</a>
+            
+            
+            
+            <a class="nav-item" target="_blank" rel="noopener" href="https://www.zju.edu.cn/">School</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+
+        
+        <div class="date" id="date">
+            <span>March</span>
+            <span>1,</span>
+            <span>2023</span>
+        </div>
+        
+
+        <h2 class="title">Arduino Application</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <center>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picture37c2f38141160de33c28ec24a900f7c.jpg"/>
+</center>
+<p align="left"> Arduino is a convenient, flexible, and easy-to-use open source electronic prototyping platform. It contains software (ArduinoIDE integrated development environment) and hardware (various models of Arduino boards). The hardware can be programmed by the software to sense and interact with the physical world.</p>
+<p align="left"> The Arduino software program is created using the Arduino IDE, an integrated development environment on your computer. In the IDE, you can write and edit code and convert this code into instructions that the Arduino hardware understands, and then upload these instructions to the Arduino board, which enables you to control the Arduino board through the program.</p>
+
+<center>
+
+<h2 id="Arduino-Input"><a href="#Arduino-Input" class="headerlink" title="Arduino Input"></a>Arduino Input</h2><h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3></center>
+
+
+<h3 id="Temperature-Sensor"><a href="#Temperature-Sensor" class="headerlink" title="Temperature Sensor"></a>Temperature Sensor</h3><p>Temperature sensors were the first to be developed and the most widely used class of sensors. Among them, thermistors, whose resistance value can vary with temperature, are a more common type of semiconductor sensor for detecting temperature. The resistance value of a thermistor is very sensitive to temperature and will exhibit different resistance values at different temperatures. Since there is a non-linear relationship between the temperature measured by the thermistor and the resistance value, the temperature value of the environment can be obtained backwards from its resistance value. In summary, thermistors have the advantages of high sensitivity, small size, fast response time, and low price.</p>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureA001.png"/></center>
+We use a thermistor module and hope to be able to view the temperature change through the serial port. The thermistor module has four pins, AO\DO\GND and VCC, as shown in Figure 6.2.3, and we chose the AO pin as the output pin of the temperature signal. The circuit connection is shown in the figure. Connect the AO pin to the A0 analog port in the Arduino board, as shown by the green line.
+<center>
+<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureA002.png"/></center>
+First, define the temperature sensor pin variable "temperatureSensorPin" at the beginning of the program, for the A0 analog port. Set the serial communication baud rate in the setup initialization. In the loop body, the analog value of the temperature is read from the segment "temperatureSensorPin" and assigned to the segment "temperatureSensorValue". Finally, the temperature value is printed out in the serial port. The specific code of this step is as follows.
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> temperatureSensorPin = A0;   <span class="comment">//analog pin 0</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span>()</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span>()</span> &#123;</span><br><span class="line">  <span class="built_in">int</span> temperatureSensorValue = analogRead(temperatureSensorPin);</span><br><span class="line">  Serial.println(temperatureSensorValue);</span><br><span class="line">  delay(<span class="number">250</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picturezhanweifu.jpg"/>
+</center>
+<br/>
+
+<center>
+
+<h3 id="Temperature-and-humidity-sensor-DHT11"><a href="#Temperature-and-humidity-sensor-DHT11" class="headerlink" title="Temperature and humidity sensor (DHT11)"></a>Temperature and humidity sensor (DHT11)</h3></center>
+The temperature and humidity sensor DHT11 is a composite sensor that contains calibrated digital signal outputs for temperature and humidity, includes a resistive moisture sensing element and an NTC temperature measuring element, and is connected to a high performance 8-bit microcontroller. It has a limited measurement range, with humidity between 20% and 90% and temperature within 0-50°C.
+<center>
+<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureA003.png"/>
+</center>
+Here we expect to read the temperature and humidity information through the serial port. In the circuit connection, we connect the power input pin VCC to the 5v power supply, GND to ground, and the signal output pin DATA to the number 2 digital port, as shown in the green line.
+<center>
+<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureA004.png"/>
+</center>
+In the code section, first call the DHT.H library and define the pin variable DHTPIN for the sensor as 2, as well as define the type DHT11. and instantiate a DHT class named dht. This way, we do not need to write the complex program ourselves. In setup initialization, set the serial communication baud rate and print out "DHT11 test!" to get the temperature and humidity sensor started, dht.begin.
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#include &quot;DHT.h&quot;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DHTPIN 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DHTTYPE DHT11</span></span><br><span class="line"><span class="function">DHT <span class="title">dht</span> (<span class="params">DHTPIN, DHTTYPE</span>)</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span>()</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  Serial.println(<span class="string">&quot;DHT11 test!&quot;</span>);</span><br><span class="line">  dht.begin();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Enter the loop main loop and read the humidity (code segment “dht.readHumidity”) and assign it to the double precision floating point number h. The temperature (code segment “dht.readTemperature”) is assigned to the Celsius temperature t and the Fahrenheit temperature f. The code for this step is as follows.</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span>()</span> &#123;</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">  <span class="built_in">float</span> h = dht.readHumidity();   <span class="comment">//Reading humidity</span></span><br><span class="line">  <span class="built_in">float</span> t = dht.readTemperature();   <span class="comment">//Reading Celsius</span></span><br><span class="line">  <span class="built_in">float</span> f = dht.readTemperature(<span class="literal">true</span>);   <span class="comment">//Reading Fahrenheit</span></span><br></pre></td></tr></table></figure>
+
+<p>When one of the variables h, t and f fails to be read, the output is printed “Failed to read from DHT sensor! Then, based on the read h, t and f values, the heat index (Fahrenheit) hif and the heat index (Celsius) hic are calculated, where the heat index is also the body sensory temperature. In high temperature, when the relative humidity increases, the real temperature felt by human body will exceed the actual temperature. The specific code for this step is as follows.</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isnan(h) || isnan(t) || isnan(f)) &#123;</span><br><span class="line">  seriala.println(<span class="string">&quot;Failed to read from DHT sensor!&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;   <span class="comment">// Check if any reads failed and exit early (to try again).</span></span><br><span class="line"><span class="built_in">float</span> hif = dht.computeHeatIndex(f, h);   <span class="comment">//Calculation of heat index (degrees Fahrenheit)</span></span><br><span class="line"><span class="built_in">float</span> hic = dht.computeHeatIndex(t, h, <span class="literal">false</span>);   <span class="comment">//Calculation of heat index (degrees Celsius)</span></span><br></pre></td></tr></table></figure>
+
+<p>Finally, the humidity h, Celsius temperature t, Fahrenheit temperature, and heat index hic and hif are printed out in the serial port, respectively. The specific code for this step is as follows.</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  Serial.print(F(<span class="string">&quot;Humidity: &quot;</span>));</span><br><span class="line">  Serial.print(h);</span><br><span class="line">  Serial.print(F(<span class="string">&quot;% Temperature: &quot;</span>));</span><br><span class="line">  Serial.print(t);</span><br><span class="line">  Serial.print(F(<span class="string">&quot;℃&quot;</span>));</span><br><span class="line">  Serial.print(f);</span><br><span class="line">  Serial.print(F(<span class="string">&quot;℉ Heat inndex: &quot;</span>));</span><br><span class="line">  Serial.print(hic);</span><br><span class="line">  Serial.print(F(<span class="string">&quot;℃&quot;</span>));</span><br><span class="line">  Serial.print(hif);</span><br><span class="line">  Serial.println(F(<span class="string">&quot;℉&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<center>
+<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20picturezhanweifu.jpg"/>
+</center>
+<br/>
+
+<center>
+
+<h3 id="Heart-rate-sensor-Pulse-Sensor"><a href="#Heart-rate-sensor-Pulse-Sensor" class="headerlink" title="Heart rate sensor (Pulse Sensor)"></a>Heart rate sensor (Pulse Sensor)</h3></center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+
+<h2 id="Arduino-Output"><a href="#Arduino-Output" class="headerlink" title="Arduino Output"></a>Arduino Output</h2><h3 id="LED-dot-matrix-screen-1588AB-24"><a href="#LED-dot-matrix-screen-1588AB-24" class="headerlink" title="LED dot matrix screen (1588AB-24)"></a>LED dot matrix screen (1588AB-24)</h3></center>
+
+
+<center>
+
+<h3 id="Motor"><a href="#Motor" class="headerlink" title="Motor"></a>Motor</h3></center>
+
+
+
+<center>
+
+<h3 id="Screen-LCD-I2C-x2F-SPI"><a href="#Screen-LCD-I2C-x2F-SPI" class="headerlink" title="Screen (LCD I2C&#x2F;SPI)"></a>Screen (LCD I2C&#x2F;SPI)</h3></center>
+
+    </div>
+
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Guo Herui, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        
+        <a href="../../../../2022/12/13/Processing/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">Processing</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/2022zjudemini-team1boy/2022/11/16/Hello-my-teammates" class="item">Team</a>
+                
+                <a href="/course" class="item">Course</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/about" class="item">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a href="/2022zjudemini-team1boy/2022/11/28/Website-construction" class="item">Website</a>
+                
+                <a href="/2022zjudemini-team1boy/2022/11/28/CAD-Design" class="item">CAD Design</a>
+                
+                <a href="/2022zjudemini-team1boy/2022/12/06/3D-Printer-Laser-Cutting" class="item">3D Printer &amp; Laser Cutting</a>
+                
+                <a href="/2022zjudemini-team1boy/2022/12/13/Processing" class="item">Processing</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Team</h4>
+                
+                <a href="/2022zjudemini-team1boy/2022/11/16/Herui%20Guo" class="item">Herui Guo</a>
+                
+                <a href="/2022zjudemini-team1boy/2022/11/16/Haotian%20Ying" class="item">Haotian Ying</a>
+                
+                <a href="/2022zjudemini-team1boy/2022/11/16/Chenda%20Zheng" class="item">Chenda Zheng</a>
+                
+                <a href="/2022zjudemini-team1boy/2022/11/16/Liyi%20Zhang" class="item">Liyi Zhang</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2023 Guo Herui<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="../../../../js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
