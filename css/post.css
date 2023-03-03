@@ -79,8 +79,8 @@ hr,
 .content table {
   padding: 0;
   border-collapse: collapse;
-  border-radius: auto;
-  max-width: 50%;
+  border-radius: 15px;
+  max-width: 800px;
   overflow-x: auto;
 }
 
