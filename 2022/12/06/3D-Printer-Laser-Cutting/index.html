@@ -326,10 +326,12 @@
 <img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureL8.gif"/>
 <p align="left"> 2.Stick the parts of tape to form the soft robot，preparing for the control of arduino.</p>
 <img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureL9.gif"/>
-<p align="left"> 3.Use arduino with pump to control the motion of the soft robot.
-<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureL10.gif"/></p>
+<p align="left"> 3.Use arduino with pump to control the motion of the soft robot.</p>
+<img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureL10.gif"/>
+<br/>
 
 <h4 id="Arduino-Code"><a href="#Arduino-Code" class="headerlink" title="Arduino Code"></a>Arduino Code</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> motorPin = <span class="number">2</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span>()</span> &#123;</span><br><span class="line">  pinMode(motorPin,OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span>()</span> &#123;</span><br><span class="line">   digitalWrite(motorPin, HIGH);</span><br><span class="line">   delay(<span class="number">2000</span>); </span><br><span class="line">   digitalWrite(motorPin,LOW);</span><br><span class="line">   delay(<span class="number">2000</span>);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
 
 <h4 id="Tinkcad-Diagram"><a href="#Tinkcad-Diagram" class="headerlink" title="Tinkcad Diagram"></a>Tinkcad Diagram</h4><img src="https://cdn.jsdelivr.net/gh/ghr0821/Esigners-Pic/esigners%20pictureL7.png"/>
     </div>
